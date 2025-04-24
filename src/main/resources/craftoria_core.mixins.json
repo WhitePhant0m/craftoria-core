@@ -1,0 +1,21 @@
+{
+    "required": true,
+    "package": "dev.wp.craftoria_core.mixin",
+    "plugin": "dev.wp.craftoria_core.mixin.MixinPlugin",
+    "compatibilityLevel": "JAVA_21",
+    "minVersion": "0.8",
+    "client": [
+        "ae2.KeySortersMixin",
+        "excavein.BlockOutlineRendererMixin",
+    ],
+    "mixins": [
+        "emi.ReloadWorkerMixin",
+        "excavein.ServerConfigMixin",
+        "excavein.ServerPlayerGameModeMixinSquared",
+        "mynethersdelight.CommonEventMixin",
+        "skillsmod.SkillsAPIMixin",
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
