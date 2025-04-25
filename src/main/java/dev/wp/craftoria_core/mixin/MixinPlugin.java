@@ -20,6 +20,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
             "dev.wp.craftoria_core.mixin.excavein.BlockOutlineRenderedMixin", () -> Utils.excaveinLoaded,
             "dev.wp.craftoria_core.mixin.excavein.ServerConfigMixin", () -> Utils.excaveinLoaded,
             "dev.wp.craftoria_core.mixin.excavein.ServerPlayerGameModeMixinSquared", () -> Utils.excaveinLoaded,
+            "dev.wp.craftoria_core.mixin.mob_grinding_utils.TileEntitySawMixin", () -> Utils.isModLoaded("mob_grinding_utils"),
             "dev.wp.craftoria_core.mixin.mynethersdelight.CommonEventMixin", () -> Utils.isModLoaded("mynethersdelight"),
             "dev.wp.craftoria_core.mixin.skillsmod.SkillsAPIMixin", () -> Utils.isModLoaded("puffish_skills")
     );

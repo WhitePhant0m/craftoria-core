@@ -12,6 +12,7 @@
         "emi.ReloadWorkerMixin",
         "excavein.ServerConfigMixin",
         "excavein.ServerPlayerGameModeMixinSquared",
+        "mob_grinding_utils.TileEntitySawMixin",
         "mynethersdelight.CommonEventMixin",
         "skillsmod.SkillsAPIMixin",
     ],
