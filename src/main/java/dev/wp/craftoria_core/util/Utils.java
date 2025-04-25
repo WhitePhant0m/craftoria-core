@@ -11,7 +11,6 @@ import uwu.lopyluna.excavein.data.SelectionPlayerData;
 
 public class Utils {
     public static final boolean mekanismLoaded = isModLoaded("mekanism");
-    public static final boolean excaveinLoaded = isModLoaded("excavein");
 
     public static volatile boolean emiReloading = false;
     public static volatile boolean updateBlockedByEmi = false;
@@ -40,5 +39,4 @@ public class Utils {
     public static boolean isModLoaded(String modId) {
         return ModList.get().isLoaded(modId);
     }
-
 }

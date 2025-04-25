@@ -109,7 +109,7 @@ dependencies {
 //    runtimeOnly("maven.modrinth:my-nethers-delight:${mynethersdelight_version}")
 
     compileOnly("maven.modrinth:excavein:1.21-${excavein_version}")
-    runtimeOnly("maven.modrinth:excavein:1.21-${excavein_version}")
+//    runtimeOnly("maven.modrinth:excavein:1.21-${excavein_version}")
 
     compileOnly("org.appliedenergistics:appliedenergistics2:${ae2_version}")
     runtimeOnly("org.appliedenergistics:appliedenergistics2:${ae2_version}")

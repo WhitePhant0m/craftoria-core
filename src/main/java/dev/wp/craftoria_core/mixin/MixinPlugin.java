@@ -1,32 +1,49 @@
 package dev.wp.craftoria_core.mixin;
 
-import com.google.common.collect.ImmutableMap;
-import dev.wp.craftoria_core.util.Utils;
+import dev.wp.craftoria_core.Craftoria;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.Supplier;
 
 public class MixinPlugin implements IMixinConfigPlugin {
-    private static final Supplier<Boolean> TRUE = () -> true;
+    private final Map<String, Boolean> modStatus = new HashMap<>();
+    private final Map<String, String> mixinToMod = new HashMap<>();
 
-    private static final Map<String, Supplier<Boolean>> COND = ImmutableMap.of(
-            "dev.wp.craftoria_core.mixin.ae2.KeySortersMixin", () -> Utils.isModLoaded("ae2"),
-            "dev.wp.craftoria_core.mixin.emi.ReloadWorkerMixin", () -> Utils.isModLoaded("emi"),
-            "dev.wp.craftoria_core.mixin.excavein.BlockOutlineRenderedMixin", () -> Utils.excaveinLoaded,
-            "dev.wp.craftoria_core.mixin.excavein.ServerConfigMixin", () -> Utils.excaveinLoaded,
-            "dev.wp.craftoria_core.mixin.excavein.ServerPlayerGameModeMixinSquared", () -> Utils.excaveinLoaded,
-            "dev.wp.craftoria_core.mixin.mob_grinding_utils.TileEntitySawMixin", () -> Utils.isModLoaded("mob_grinding_utils"),
-            "dev.wp.craftoria_core.mixin.mynethersdelight.CommonEventMixin", () -> Utils.isModLoaded("mynethersdelight"),
-            "dev.wp.craftoria_core.mixin.skillsmod.SkillsAPIMixin", () -> Utils.isModLoaded("puffish_skills")
+    private static final Set<String> EXCAVEIN_MIXINS = Set.of(
+            "dev.wp.craftoria_core.mixin.excavein.BlockOutlineRenderedMixin",
+            "dev.wp.craftoria_core.mixin.excavein.ServerConfigMixin",
+            "dev.wp.craftoria_core.mixin.excavein.ServerPlayerGameModeMixinSquared"
     );
 
+    private void setMixinToMod(String mixin, String mod) {
+        mixinToMod.put("dev.wp.craftoria_core.mixin." + mixin, mod);
+    }
+
     @Override
-    public void onLoad(String mixinPackage) {
+    public void onLoad(String s) {
+        List<String> mods = Craftoria.getModList();
+
+
+        modStatus.put("ae2", (mods.contains("ae2") && mods.contains("emi")));
+        modStatus.put("emi", (mods.contains("ae2") && mods.contains("emi")));
+        modStatus.put("excavein", mods.contains("excavein"));
+        modStatus.put("mob_grinding_utils", mods.contains("mob_grinding_utils"));
+        modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
+        modStatus.put("puffish_skills", mods.contains("puffish_skills"));
+
+        setMixinToMod("ae2.KeySortersMixin", "ae2");
+        setMixinToMod("emi.ReloadWorkerMixin", "emi");
+        setMixinToMod("excavein.BlockOutlineRenderedMixin", "excavein");
+        setMixinToMod("excavein.ServerConfigMixin", "excavein");
+        setMixinToMod("excavein.ServerPlayerGameModeMixinSquared", "excavein");
+        setMixinToMod("mob_grinding_utils.TileEntitySawMixin", "mob_grinding_utils");
+        setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
+        setMixinToMod("skillsmod.SkillsAPIMixin", "puffish_skills");
     }
 
     @Override
@@ -36,7 +53,12 @@ public class MixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return COND.getOrDefault(targetClassName, TRUE).get();
+        if (EXCAVEIN_MIXINS.contains(mixinClassName)) {
+            return modStatus.getOrDefault("excavein", false);
+        }
+
+        String modId = mixinToMod.get(mixinClassName);
+        return modId == null || modStatus.getOrDefault(modId, false);
     }
 
     @Override
@@ -53,6 +75,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
     }
 
     @Override
-    public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+    public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo
+            mixinInfo) {
     }
 }
