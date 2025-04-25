@@ -14,23 +14,19 @@ public class MixinPlugin implements IMixinConfigPlugin {
     private final Map<String, Boolean> modStatus = new HashMap<>();
     private final Map<String, String> mixinToMod = new HashMap<>();
 
-    private static final Set<String> EXCAVEIN_MIXINS = Set.of(
-            "dev.wp.craftoria_core.mixin.excavein.BlockOutlineRenderedMixin",
-            "dev.wp.craftoria_core.mixin.excavein.ServerConfigMixin",
-            "dev.wp.craftoria_core.mixin.excavein.ServerPlayerGameModeMixinSquared"
-    );
+    private static final String BASE_PACKAGE = "dev.wp.craftoria_core.mixin.";
 
     private void setMixinToMod(String mixin, String mod) {
-        mixinToMod.put("dev.wp.craftoria_core.mixin." + mixin, mod);
+        mixinToMod.put(BASE_PACKAGE + mixin, mod);
     }
 
     @Override
     public void onLoad(String s) {
         List<String> mods = Craftoria.getModList();
 
-
-        modStatus.put("ae2", (mods.contains("ae2") && mods.contains("emi")));
-        modStatus.put("emi", (mods.contains("ae2") && mods.contains("emi")));
+        boolean ae2AndEmi = mods.contains("ae2") && mods.contains("emi");
+        modStatus.put("ae2", ae2AndEmi);
+        modStatus.put("emi", ae2AndEmi);
         modStatus.put("excavein", mods.contains("excavein"));
         modStatus.put("mob_grinding_utils", mods.contains("mob_grinding_utils"));
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
@@ -53,10 +49,6 @@ public class MixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (EXCAVEIN_MIXINS.contains(mixinClassName)) {
-            return modStatus.getOrDefault("excavein", false);
-        }
-
         String modId = mixinToMod.get(mixinClassName);
         return modId == null || modStatus.getOrDefault(modId, false);
     }
