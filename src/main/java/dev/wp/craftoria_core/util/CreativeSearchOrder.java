@@ -19,11 +19,11 @@ public final class CreativeSearchOrder {
     private CreativeSearchOrder() {
     }
 
-    public static int getItemIndex(Item item) {
+    public static int getItemIndex(ItemStack item) {
         Integer index = itemOrderMap.get(ItemMatcher.of(item));
         if (index != null) return index;
 
-        index = itemOrderMap.get(ItemMatcher.ignoreNbt(item));
+        index = itemOrderMap.get(ItemMatcher.ignoreNbt(item.getItem()));
         return index != null ? index : Integer.MAX_VALUE;
     }
 
@@ -62,7 +62,7 @@ public final class CreativeSearchOrder {
                 if (!stack.hasFoil() || !newMap.containsKey(noNbt)) {
                     newMap.put(noNbt, index++);
                 }
-                newMap.put(ItemMatcher.of(item), index++);
+                newMap.put(ItemMatcher.of(stack), index++);
             }
 
             itemOrderMap.clear();

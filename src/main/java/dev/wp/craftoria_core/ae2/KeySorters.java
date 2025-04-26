@@ -1,10 +1,10 @@
 package dev.wp.craftoria_core.ae2;
 
+import appeng.api.stacks.AEFluidKey;
+import appeng.api.stacks.AEItemKey;
 import appeng.api.stacks.AEKey;
 import dev.wp.craftoria_core.util.Utils;
-import mekanism.api.chemical.Chemical;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.material.Fluid;
+import me.ramidzkh.mekae2.ae2.MekanismKey;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.ApiStatus.NonExtendable;
 
@@ -22,12 +22,15 @@ public interface KeySorters {
     }
 
     static int applyAsInt(AEKey aeKey) {
-        Object primaryKey = aeKey.getPrimaryKey();
-        return switch (primaryKey) {
-            case Item item -> Utils.getItemPosition(item);
-            case Fluid fluid -> Utils.getFluidPos(fluid);
-            case Chemical chemical when Utils.mekanismLoaded -> Utils.getChemicalPos(chemical);
-            case null, default -> Integer.MAX_VALUE;
+        return switch (aeKey) {
+            case AEItemKey item -> Utils.getItemPosition(item.toStack());
+            case AEFluidKey fluid -> Utils.getFluidPos(fluid.getFluid());
+            default -> {
+                if (Utils.isModLoaded("appmek") && aeKey instanceof MekanismKey chemicalKey)
+                    yield Utils.getChemicalPos((chemicalKey).getStack().getChemical());
+
+                yield Integer.MAX_VALUE;
+            }
         };
     }
 }

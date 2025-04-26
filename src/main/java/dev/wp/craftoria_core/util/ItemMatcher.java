@@ -2,6 +2,7 @@ package dev.wp.craftoria_core.util;
 
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,8 +19,8 @@ public class ItemMatcher {
         this.useComponents = useComponents;
     }
 
-    public static ItemMatcher of(@NotNull Item item) {
-        return new ItemMatcher(item, item.components(), true);
+    public static ItemMatcher of(@NotNull ItemStack item) {
+        return new ItemMatcher(item.getItem(), item.getComponents(), true);
     }
 
     public static ItemMatcher ignoreNbt(@NotNull Item item) {
