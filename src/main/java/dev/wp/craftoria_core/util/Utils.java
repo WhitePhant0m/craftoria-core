@@ -3,7 +3,7 @@ package dev.wp.craftoria_core.util;
 import mekanism.api.MekanismAPI;
 import mekanism.api.chemical.Chemical;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.util.FakePlayer;
@@ -18,8 +18,8 @@ public class Utils {
     private final static int fluidOffset = Integer.MAX_VALUE / 1000;
     private final static int gasOffset = fluidOffset * 10;
 
-    public static int getItemPosition(Item item) {
-        if (emiReloading) return BuiltInRegistries.ITEM.getId(item); // EMI reload in progress, use a fallback
+    public static int getItemPosition(ItemStack item) {
+        if (emiReloading) return BuiltInRegistries.ITEM.getId(item.getItem()); // EMI reload in progress, use a fallback
         else return CreativeSearchOrder.getItemIndex(item);
     }
 

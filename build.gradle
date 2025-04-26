@@ -40,6 +40,11 @@ repositories {
 
     maven { url = uri("https://maven.puffish.net") }
     maven { url = "https://maven.bawnorton.com/releases" }
+
+    maven {
+        // Shadows_of_Fire's Maven
+        url "https://maven.shadowsoffire.dev/releases"
+    }
 }
 
 base {
@@ -118,13 +123,23 @@ dependencies {
     runtimeOnly("dev.emi:emi-neoforge:${emi_version}")
 
     compileOnly("mekanism:Mekanism:${minecraft_version}-${mekanism_version}:api")
+    compileOnly "curse.maven:applied-mekanistics-574300:5978711"
+
     runtimeOnly("mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all")
+//    runtimeOnly "curse.maven:applied-mekanistics-574300:5978711"
 
     compileOnly("net.puffish:skillsmod:${puffish_skills_version}+1.21:neoforge")
     // runtimeOnly("net.puffish:skillsmod:${puffish_skills_version}+1.21:neoforge")
 
     compileOnly("curse.maven:mob-grinding-utils-254241:6022733")
     runtimeOnly("curse.maven:just-dire-things-1002348:6369120")
+
+    // Just used to verify nbt ordering works with creative sort
+    runtimeOnly ("dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}")
+    runtimeOnly ("dev.shadowsoffire:ApothicAttributes:${minecraft_version}-${apothAttribsVersion}")
+    runtimeOnly ("dev.shadowsoffire:ApothicSpawners:${minecraft_version}-${apothSpawnersVersion}")
+    runtimeOnly ("dev.shadowsoffire:ApothicEnchanting:${minecraft_version}-${apothEnchVersion}")
+    runtimeOnly ("dev.shadowsoffire:Apotheosis:${minecraft_version}-${apothVersion}")
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
