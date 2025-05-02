@@ -103,18 +103,11 @@ configurations {
 }
 
 dependencies {
-    // MixinSquared's annotationProcessor MUST be registered BEFORE Mixin's one.
-    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.2-beta.3"))
-    implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.2-beta.3"))
-
     compileOnly("maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}")
 //    runtimeOnly("maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}")
 
     compileOnly("maven.modrinth:my-nethers-delight:${mynethersdelight_version}")
 //    runtimeOnly("maven.modrinth:my-nethers-delight:${mynethersdelight_version}")
-
-    compileOnly("maven.modrinth:excavein:1.21-${excavein_version}")
-//    runtimeOnly("maven.modrinth:excavein:1.21-${excavein_version}")
 
     compileOnly("org.appliedenergistics:appliedenergistics2:${ae2_version}")
     runtimeOnly("org.appliedenergistics:appliedenergistics2:${ae2_version}")
@@ -122,7 +115,7 @@ dependencies {
     compileOnly("dev.emi:emi-neoforge:${emi_version}")
     runtimeOnly("dev.emi:emi-neoforge:${emi_version}")
 
-    compileOnly("mekanism:Mekanism:${minecraft_version}-${mekanism_version}:api")
+    compileOnly("mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all")
     compileOnly "curse.maven:applied-mekanistics-574300:5978711"
 
     runtimeOnly("mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all")
@@ -160,7 +153,6 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_authors                   : mod_authors,
             mod_description               : mod_description,
             mynethersdelight_version_range: mynethersdelight_version_range,
-            excavein_version_range        : excavein_version_range,
             ae2_version_range             : ae2_version_range,
     ]
     inputs.properties replaceProperties

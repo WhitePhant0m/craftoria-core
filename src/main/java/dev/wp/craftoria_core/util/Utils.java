@@ -6,12 +6,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.fml.ModList;
-import net.neoforged.neoforge.common.util.FakePlayer;
-import uwu.lopyluna.excavein.data.SelectionPlayerData;
 
 public class Utils {
-    public static final boolean mekanismLoaded = isModLoaded("mekanism");
-
     public static volatile boolean emiReloading = false;
     public static volatile boolean updateBlockedByEmi = false;
 
@@ -28,12 +24,7 @@ public class Utils {
     }
 
     public static int getChemicalPos(Chemical chemical) {
-        if (!mekanismLoaded) return 0;
         return gasOffset + MekanismAPI.CHEMICAL_REGISTRY.getId(chemical);
-    }
-
-    public static boolean excaveinCheck(SelectionPlayerData data) {
-        return data.getLevel() != null && data.getPlayer() != null && data.getPlayerUUID() != null && !(data.getPlayer() instanceof FakePlayer);
     }
 
     public static boolean isModLoaded(String modId) {

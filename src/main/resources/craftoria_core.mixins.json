@@ -6,12 +6,9 @@
     "minVersion": "0.8",
     "client": [
         "ae2.KeySortersMixin",
-        "excavein.BlockOutlineRendererMixin",
     ],
     "mixins": [
         "emi.ReloadWorkerMixin",
-        "excavein.ServerConfigMixin",
-        "excavein.ServerPlayerGameModeMixinSquared",
         "mob_grinding_utils.TileEntitySawMixin",
         "mynethersdelight.CommonEventMixin",
         "skillsmod.SkillsAPIMixin",
