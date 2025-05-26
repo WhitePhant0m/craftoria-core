@@ -124,7 +124,6 @@ dependencies {
     compileOnly("net.puffish:skillsmod:${puffish_skills_version}+1.21:neoforge")
     // runtimeOnly("net.puffish:skillsmod:${puffish_skills_version}+1.21:neoforge")
 
-    compileOnly("curse.maven:mob-grinding-utils-254241:6022733")
     runtimeOnly("curse.maven:just-dire-things-1002348:6369120")
 
     // Just used to verify nbt ordering works with creative sort

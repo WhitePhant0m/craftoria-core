@@ -27,13 +27,11 @@ public class MixinPlugin implements IMixinConfigPlugin {
         boolean ae2AndEmi = mods.contains("ae2") && mods.contains("emi");
         modStatus.put("ae2", ae2AndEmi);
         modStatus.put("emi", ae2AndEmi);
-        modStatus.put("mob_grinding_utils", mods.contains("mob_grinding_utils"));
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("puffish_skills", mods.contains("puffish_skills"));
 
         setMixinToMod("ae2.KeySortersMixin", "ae2");
         setMixinToMod("emi.ReloadWorkerMixin", "emi");
-        setMixinToMod("mob_grinding_utils.TileEntitySawMixin", "mob_grinding_utils");
         setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("skillsmod.SkillsAPIMixin", "puffish_skills");
     }
