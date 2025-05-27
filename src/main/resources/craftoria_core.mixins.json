@@ -5,13 +5,12 @@
     "compatibilityLevel": "JAVA_21",
     "minVersion": "0.8",
     "client": [
-        "ae2.KeySortersMixin",
+        "ae2.KeySortersMixin"
     ],
     "mixins": [
         "emi.ReloadWorkerMixin",
-        "mob_grinding_utils.TileEntitySawMixin",
         "mynethersdelight.CommonEventMixin",
-        "skillsmod.SkillsAPIMixin",
+        "skillsmod.SkillsAPIMixin"
     ],
     "injectors": {
         "defaultRequire": 1
