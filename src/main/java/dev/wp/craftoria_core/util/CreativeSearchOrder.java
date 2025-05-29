@@ -15,7 +15,6 @@ public final class CreativeSearchOrder {
 
     private static final Map<ItemMatcher, Integer> itemOrderMap = new ConcurrentHashMap<>();
     private static volatile boolean updatePending = false;
-    private static boolean built = false;
 
     private CreativeSearchOrder() {
     }
@@ -35,7 +34,7 @@ public final class CreativeSearchOrder {
             return;
         }
 
-        if (!updatePending && !built) {
+        if (!updatePending) {
             updatePending = true;
             new Thread(CreativeSearchOrder::buildItemOrderMap, Craftoria.NAME + ": rebuilding creative order").start();
         }
@@ -49,12 +48,9 @@ public final class CreativeSearchOrder {
             FeatureFlagSet flags = mc.level.enabledFeatures();
             boolean showOpItems = mc.player.canUseGameMasterBlocks() && mc.options.operatorItemsTab().get();
 
+            CreativeModeTabs.tryRebuildTabContents(flags, !showOpItems, mc.level.registryAccess());
             List<ItemStack> stacks = List.copyOf(CreativeModeTabs.searchTab().getDisplayItems());
-            if (stacks.isEmpty()) {
-                CreativeModeTabs.tryRebuildTabContents(flags, !showOpItems, mc.level.registryAccess());
-                stacks = List.copyOf(CreativeModeTabs.searchTab().getDisplayItems());
-                if (stacks.isEmpty()) return;
-            }
+            if (stacks.isEmpty()) return;
 
             Map<ItemMatcher, Integer> newMap = new ConcurrentHashMap<>(stacks.size() * 2);
             int index = 0;
@@ -70,7 +66,6 @@ public final class CreativeSearchOrder {
 
             itemOrderMap.clear();
             itemOrderMap.putAll(newMap);
-            built = true;
         } finally {
             updatePending = false;
         }
