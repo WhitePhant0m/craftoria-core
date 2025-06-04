@@ -1,6 +1,6 @@
 package dev.wp.craftoria_core.mixin;
 
-import dev.wp.craftoria_core.Craftoria;
+import dev.wp.craftoria_core.util.Utils;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -22,18 +22,16 @@ public class MixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String s) {
-        List<String> mods = Craftoria.getModList();
+        List<String> mods = Utils.getModList();
 
         boolean ae2AndEmi = mods.contains("ae2") && mods.contains("emi");
         modStatus.put("ae2", ae2AndEmi);
         modStatus.put("emi", ae2AndEmi);
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
-        modStatus.put("puffish_skills", mods.contains("puffish_skills"));
 
         setMixinToMod("ae2.KeySortersMixin", "ae2");
         setMixinToMod("emi.ReloadWorkerMixin", "emi");
         setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
-        setMixinToMod("skillsmod.SkillsAPIMixin", "puffish_skills");
     }
 
     @Override

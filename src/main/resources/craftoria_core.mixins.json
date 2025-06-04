@@ -9,8 +9,7 @@
     ],
     "mixins": [
         "emi.ReloadWorkerMixin",
-        "mynethersdelight.CommonEventMixin",
-        "skillsmod.SkillsAPIMixin"
+        "mynethersdelight.CommonEventMixin"
     ],
     "injectors": {
         "defaultRequire": 1

@@ -6,6 +6,10 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.LoadingModList;
+import net.neoforged.fml.loading.moddiscovery.ModInfo;
+
+import java.util.List;
 
 public class Utils {
     public static volatile boolean emiReloading = false;
@@ -29,5 +33,9 @@ public class Utils {
 
     public static boolean isModLoaded(String modId) {
         return ModList.get().isLoaded(modId);
+    }
+
+    public static List<String> getModList() {
+        return LoadingModList.get().getMods().stream().map(ModInfo::getModId).toList();
     }
 }

@@ -26,7 +26,10 @@ repositories {
     }
 
     maven {
-        url "https://cursemaven.com"
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
     }
 
     maven {
@@ -38,12 +41,27 @@ repositories {
         }
     }
 
-    maven { url = uri("https://maven.puffish.net") }
     maven { url = "https://maven.bawnorton.com/releases" }
+    maven { url = "https://maven.kosmx.dev/" }
 
     maven {
-        // Shadows_of_Fire's Maven
+        name = "Shadows of Fire's Maven"
         url "https://maven.shadowsoffire.dev/releases"
+    }
+
+    maven {
+        url "https://maven.latvian.dev/releases"
+        content {
+            includeGroup "dev.latvian.mods"
+            includeGroup "dev.latvian.apps"
+        }
+    }
+
+    maven {
+        url 'https://jitpack.io'
+        content {
+            includeGroup "com.github.rtyley"
+        }
     }
 }
 
@@ -103,35 +121,42 @@ configurations {
 }
 
 dependencies {
-    compileOnly("maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}")
-//    runtimeOnly("maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}")
+    compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
+//    runtimeOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
 
-    compileOnly("maven.modrinth:my-nethers-delight:${mynethersdelight_version}")
-//    runtimeOnly("maven.modrinth:my-nethers-delight:${mynethersdelight_version}")
+    compileOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
+//    runtimeOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
 
-    compileOnly("org.appliedenergistics:appliedenergistics2:${ae2_version}")
-    runtimeOnly("org.appliedenergistics:appliedenergistics2:${ae2_version}")
+    implementation "org.appliedenergistics:appliedenergistics2:${ae2_version}"
 
-    compileOnly("dev.emi:emi-neoforge:${emi_version}")
-    runtimeOnly("dev.emi:emi-neoforge:${emi_version}")
+    implementation "dev.emi:emi-neoforge:${emi_version}"
+    implementation "maven.modrinth:tmrv:${tmrv_version}+mc.21.1"
 
-    compileOnly("mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all")
+    compileOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all"
     compileOnly "curse.maven:applied-mekanistics-574300:5978711"
 
-    runtimeOnly("mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all")
+    runtimeOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}"
+    runtimeOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:generators"
+    runtimeOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:tools"
 //    runtimeOnly "curse.maven:applied-mekanistics-574300:5978711"
 
-    compileOnly("net.puffish:skillsmod:${puffish_skills_version}+1.21:neoforge")
-    // runtimeOnly("net.puffish:skillsmod:${puffish_skills_version}+1.21:neoforge")
+    runtimeOnly "curse.maven:just-dire-things-1002348:6369120"
 
-    runtimeOnly("curse.maven:just-dire-things-1002348:6369120")
+//    compileOnly "io.redspace:irons_spellbooks:${minecraft_version}-${irons_spells_version}"
+//    runtimeOnly "io.redspace:irons_spellbooks:${minecraft_version}-${irons_spells_version}"
+
+//    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
+//    runtimeOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}+${minecraft_version}"
+//    runtimeOnly "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
+
+    runtimeOnly "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
 
     // Just used to verify nbt ordering works with creative sort
-    runtimeOnly ("dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}")
-    runtimeOnly ("dev.shadowsoffire:ApothicAttributes:${minecraft_version}-${apothAttribsVersion}")
-    runtimeOnly ("dev.shadowsoffire:ApothicSpawners:${minecraft_version}-${apothSpawnersVersion}")
-    runtimeOnly ("dev.shadowsoffire:ApothicEnchanting:${minecraft_version}-${apothEnchVersion}")
-    runtimeOnly ("dev.shadowsoffire:Apotheosis:${minecraft_version}-${apothVersion}")
+    runtimeOnly "dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}"
+    runtimeOnly "dev.shadowsoffire:ApothicAttributes:${minecraft_version}-${apothAttribsVersion}"
+    runtimeOnly "dev.shadowsoffire:ApothicSpawners:${minecraft_version}-${apothSpawnersVersion}"
+    runtimeOnly "dev.shadowsoffire:ApothicEnchanting:${minecraft_version}-${apothEnchVersion}"
+    runtimeOnly "dev.shadowsoffire:Apotheosis:${minecraft_version}-${apothVersion}"
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

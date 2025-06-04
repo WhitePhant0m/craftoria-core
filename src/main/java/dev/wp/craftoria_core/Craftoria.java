@@ -1,12 +1,10 @@
 package dev.wp.craftoria_core;
 
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.loading.LoadingModList;
-import net.neoforged.fml.loading.moddiscovery.ModInfo;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 @Mod(Craftoria.MOD_ID)
 public class Craftoria {
@@ -18,7 +16,7 @@ public class Craftoria {
     public Craftoria() {
     }
 
-    public static List<String> getModList() {
-        return LoadingModList.get().getMods().stream().map(ModInfo::getModId).toList();
+    public static ResourceLocation id(@NotNull String path) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 }
