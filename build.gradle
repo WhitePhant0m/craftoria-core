@@ -158,8 +158,8 @@ dependencies {
     // Just used to verify nbt ordering works with creative sort
     runtimeOnly "dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}"
     runtimeOnly "dev.shadowsoffire:ApothicAttributes:${minecraft_version}-${apothAttribsVersion}"
-    runtimeOnly "dev.shadowsoffire:ApothicSpawners:${minecraft_version}-${apothSpawnersVersion}"
-    runtimeOnly "dev.shadowsoffire:ApothicEnchanting:${minecraft_version}-${apothEnchVersion}"
+    implementation "dev.shadowsoffire:ApothicSpawners:${minecraft_version}-${apothSpawnersVersion}"
+    implementation "dev.shadowsoffire:ApothicEnchanting:${minecraft_version}-${apothEnchVersion}"
     runtimeOnly "dev.shadowsoffire:Apotheosis:${minecraft_version}-${apothVersion}"
 
     // For more info:
