@@ -142,6 +142,11 @@ dependencies {
 
     runtimeOnly "curse.maven:just-dire-things-1002348:6369120"
 
+    compileOnly "maven.modrinth:cable-facades:${cable_facades_version}"
+    runtimeOnly "maven.modrinth:cable-facades:${cable_facades_version}"
+
+    implementation "curse.maven:xycraft-653786:5601037"
+
 //    compileOnly "io.redspace:irons_spellbooks:${minecraft_version}-${irons_spells_version}"
 //    runtimeOnly "io.redspace:irons_spellbooks:${minecraft_version}-${irons_spells_version}"
 

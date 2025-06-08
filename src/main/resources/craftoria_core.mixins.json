@@ -5,11 +5,13 @@
     "compatibilityLevel": "JAVA_21",
     "minVersion": "0.8",
     "client": [
-        "ae2.KeySortersMixin"
+        "ae2.KeySortersMixin",
+        "xycraft.XyCoreClientMixin"
     ],
     "mixins": [
         "emi.ReloadWorkerMixin",
-        "mynethersdelight.CommonEventMixin"
+        "mynethersdelight.CommonEventMixin",
+        "cable_facades.ServerInGameEventsMixin"
     ],
     "injectors": {
         "defaultRequire": 1
