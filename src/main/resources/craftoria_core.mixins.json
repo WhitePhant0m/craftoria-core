@@ -9,6 +9,8 @@
         "xycraft.XyCoreClientMixin"
     ],
     "mixins": [
+        "displaydelight.EmptyPlateBlockMixin",
+        "displaydelight.EmptySmallPlateBlockMixin",
         "emi.ReloadWorkerMixin",
         "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"

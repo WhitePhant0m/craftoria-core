@@ -30,12 +30,15 @@ public class MixinPlugin implements IMixinConfigPlugin {
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
+        modStatus.put("displaydelight", mods.contains("displaydelight"));
 
         setMixinToMod("ae2.KeySortersMixin", "ae2");
         setMixinToMod("emi.ReloadWorkerMixin", "emi");
         setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
+        setMixinToMod("displaydelight.EmptyPlateBlockMixin", "displaydelight");
+        setMixinToMod("displaydelight.EmptySmallPlateBlockMixin", "displaydelight");
     }
 
     @Override

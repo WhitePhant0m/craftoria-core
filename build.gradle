@@ -121,11 +121,9 @@ configurations {
 }
 
 dependencies {
-    compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
-//    runtimeOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
-
+    implementation "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
     compileOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
-//    runtimeOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
+    implementation "maven.modrinth:display-delight:${display_delight_version}"
 
     implementation "org.appliedenergistics:appliedenergistics2:${ae2_version}"
 
