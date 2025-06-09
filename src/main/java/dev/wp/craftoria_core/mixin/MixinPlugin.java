@@ -25,21 +25,17 @@ public class MixinPlugin implements IMixinConfigPlugin {
         List<String> mods = Utils.getModList();
 
         boolean ae2AndEmi = mods.contains("ae2") && mods.contains("emi");
-        boolean apoth = mods.contains("apothic_enchanting") && mods.contains("apothic_spawners");
         modStatus.put("ae2", ae2AndEmi);
         modStatus.put("emi", ae2AndEmi);
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
-        modStatus.put("apothic_enchanting", apoth);
-        modStatus.put("apothic_spawners", apoth);
 
         setMixinToMod("ae2.KeySortersMixin", "ae2");
         setMixinToMod("emi.ReloadWorkerMixin", "emi");
         setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
-        setMixinToMod("apoth.EnderLeadMixin", "apothic_enchanting");
     }
 
     @Override

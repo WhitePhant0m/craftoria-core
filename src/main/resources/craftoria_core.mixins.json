@@ -9,7 +9,6 @@
         "xycraft.XyCoreClientMixin"
     ],
     "mixins": [
-        "apoth.EnderLeadMixin",
         "emi.ReloadWorkerMixin",
         "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"
