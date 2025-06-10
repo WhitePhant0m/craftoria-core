@@ -9,6 +9,7 @@
         "xycraft.XyCoreClientMixin"
     ],
     "mixins": [
+        "cataclysm.CursedTombstoneEntityMixin",
         "displaydelight.EmptyPlateBlockMixin",
         "displaydelight.EmptySmallPlateBlockMixin",
         "emi.ReloadWorkerMixin",

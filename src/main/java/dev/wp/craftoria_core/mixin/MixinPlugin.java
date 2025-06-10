@@ -31,6 +31,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
         modStatus.put("displaydelight", mods.contains("displaydelight"));
+        modStatus.put("cataclysm", mods.contains("cataclysm"));
 
         setMixinToMod("ae2.KeySortersMixin", "ae2");
         setMixinToMod("emi.ReloadWorkerMixin", "emi");
@@ -39,6 +40,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
         setMixinToMod("displaydelight.EmptyPlateBlockMixin", "displaydelight");
         setMixinToMod("displaydelight.EmptySmallPlateBlockMixin", "displaydelight");
+        setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
     }
 
     @Override
