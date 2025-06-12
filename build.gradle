@@ -149,18 +149,10 @@ dependencies {
 
     compileOnly "curse.maven:xycraft-653786:5601037"
 
-//    compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}:api"
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
 
     implementation "curse.maven:lendercataclysm-551586:6501450"
     implementation "curse.maven:lionfish-api-1001614:6168249"
-
-//    compileOnly "io.redspace:irons_spellbooks:${minecraft_version}-${irons_spells_version}"
-//    runtimeOnly "io.redspace:irons_spellbooks:${minecraft_version}-${irons_spells_version}"
-
-//    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
-//    runtimeOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}+${minecraft_version}"
-//    runtimeOnly "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
 
     runtimeOnly "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
 

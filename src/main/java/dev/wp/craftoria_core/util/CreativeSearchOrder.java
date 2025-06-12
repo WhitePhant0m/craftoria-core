@@ -36,7 +36,7 @@ public final class CreativeSearchOrder {
 
         if (!updatePending) {
             updatePending = true;
-            new Thread(CreativeSearchOrder::buildItemOrderMap, Craftoria.NAME + ": rebuilding creative order").start();
+            CreativeSearchOrder.buildItemOrderMap();
         }
     }
 
@@ -48,7 +48,7 @@ public final class CreativeSearchOrder {
             FeatureFlagSet flags = mc.level.enabledFeatures();
             boolean showOpItems = mc.player.canUseGameMasterBlocks() && mc.options.operatorItemsTab().get();
 
-            CreativeModeTabs.tryRebuildTabContents(flags, !showOpItems, mc.level.registryAccess());
+            CreativeModeTabs.tryRebuildTabContents(flags, showOpItems, mc.level.registryAccess());
             List<ItemStack> stacks = List.copyOf(CreativeModeTabs.searchTab().getDisplayItems());
             if (stacks.isEmpty()) return;
 
