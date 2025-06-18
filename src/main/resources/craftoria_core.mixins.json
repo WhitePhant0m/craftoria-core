@@ -11,6 +11,7 @@
     "mixins": [
         "cataclysm.CursedTombstoneEntityMixin",
         "emi.ReloadWorkerMixin",
+        "jdt.CreatureCatcherEntityMixin",
         "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"
     ],

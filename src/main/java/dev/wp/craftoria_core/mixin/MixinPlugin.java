@@ -31,6 +31,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
         modStatus.put("cataclysm", mods.contains("cataclysm"));
+        modStatus.put("jdt", mods.contains("justdirethings"));
 
         setMixinToMod("ae2.KeySortersMixin", "ae2");
         setMixinToMod("emi.ReloadWorkerMixin", "emi");
@@ -38,6 +39,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
         setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
+        setMixinToMod("jdt.CreatureCatcherEntityMixin", "jdt");
     }
 
     @Override
