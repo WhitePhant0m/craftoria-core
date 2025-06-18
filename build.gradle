@@ -126,14 +126,13 @@ configurations {
 }
 
 dependencies {
-    implementation "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
+    compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
     compileOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
-    implementation "maven.modrinth:display-delight:${display_delight_version}"
 
     implementation "org.appliedenergistics:appliedenergistics2:${ae2_version}"
 
     implementation "dev.emi:emi-neoforge:${emi_version}"
-    implementation "maven.modrinth:tmrv:${tmrv_version}+mc.21.1"
+    runtimeOnly "maven.modrinth:tmrv:${tmrv_version}+mc.21.1"
 
     compileOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:all"
     compileOnly "curse.maven:applied-mekanistics-574300:5978711"
@@ -143,7 +142,7 @@ dependencies {
     runtimeOnly "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:tools"
 //    runtimeOnly "curse.maven:applied-mekanistics-574300:5978711"
 
-    runtimeOnly "curse.maven:just-dire-things-1002348:6369120"
+    implementation "curse.maven:just-dire-things-1002348:6369120"
 
     implementation "maven.modrinth:cable-facades:${cable_facades_version}"
 
