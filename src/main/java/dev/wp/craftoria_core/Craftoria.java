@@ -6,9 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Mod(Craftoria.MOD_ID)
+@Mod(Craftoria.ID)
 public class Craftoria {
-    public static final String MOD_ID = "craftoria_core";
+    public static final String ID = "craftoria_core";
     public static final String NAME = "Craftoria Core";
 
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
@@ -17,6 +17,6 @@ public class Craftoria {
     }
 
     public static ResourceLocation id(@NotNull String path) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(ID, path);
     }
 }

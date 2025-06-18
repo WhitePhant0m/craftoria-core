@@ -10,8 +10,6 @@
     ],
     "mixins": [
         "cataclysm.CursedTombstoneEntityMixin",
-        "displaydelight.EmptyPlateBlockMixin",
-        "displaydelight.EmptySmallPlateBlockMixin",
         "emi.ReloadWorkerMixin",
         "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"

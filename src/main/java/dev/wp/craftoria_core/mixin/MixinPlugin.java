@@ -30,7 +30,6 @@ public class MixinPlugin implements IMixinConfigPlugin {
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
-        modStatus.put("displaydelight", mods.contains("displaydelight"));
         modStatus.put("cataclysm", mods.contains("cataclysm"));
 
         setMixinToMod("ae2.KeySortersMixin", "ae2");
@@ -38,8 +37,6 @@ public class MixinPlugin implements IMixinConfigPlugin {
         setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
-        setMixinToMod("displaydelight.EmptyPlateBlockMixin", "displaydelight");
-        setMixinToMod("displaydelight.EmptySmallPlateBlockMixin", "displaydelight");
         setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
     }
 
@@ -68,7 +65,6 @@ public class MixinPlugin implements IMixinConfigPlugin {
     }
 
     @Override
-    public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo
-            mixinInfo) {
+    public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
     }
 }
