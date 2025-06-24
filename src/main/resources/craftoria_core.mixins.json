@@ -12,6 +12,8 @@
     "mixins": [
         "cataclysm.CursedTombstoneEntityMixin",
         "curios.CuriosEventHandlerMixin",
+        "foregoing.EnchantmentExtractorTileMixin",
+        "foregoing.MobCrusherTileMixin",
         "jdt.CreatureCatcherEntityMixin",
         "jdt.UnstablePortalFluidTypeMixin",
         "mynethersdelight.CommonEventMixin",

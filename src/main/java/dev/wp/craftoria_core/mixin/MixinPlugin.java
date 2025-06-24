@@ -25,7 +25,9 @@ public class MixinPlugin implements IMixinConfigPlugin {
         List<String> mods = Utils.getModList();
 
         boolean ae2AndEmi = mods.contains("ae2") && mods.contains("emi");
+        boolean jdtAndIF = mods.contains("justdirethings") && mods.contains("industrialforegoing");
         modStatus.put("ae2emi", ae2AndEmi);
+        modStatus.put("jdtAndIF", jdtAndIF);
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
@@ -42,6 +44,8 @@ public class MixinPlugin implements IMixinConfigPlugin {
         setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
+        setMixinToMod("foregoing.EnchantmentExtractorTileMixin", "jdtAndIF");
+        setMixinToMod("foregoing.MobCrusherTileMixin", "jdtAndIF");
         setMixinToMod("jdt.CreatureCatcherEntityMixin", "jdt");
         setMixinToMod("jdt.UnstablePortalFluidTypeMixin", "jdt");
         setMixinToMod("curios.CuriosEventHandlerMixin", "curios");
