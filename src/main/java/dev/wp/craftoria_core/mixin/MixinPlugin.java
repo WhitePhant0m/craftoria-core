@@ -43,6 +43,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
         setMixinToMod("jdt.CreatureCatcherEntityMixin", "jdt");
+        setMixinToMod("jdt.UnstablePortalFluidTypeMixin", "jdt");
         setMixinToMod("curios.CuriosEventHandlerMixin", "curios");
     }
 

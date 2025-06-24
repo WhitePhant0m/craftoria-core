@@ -13,6 +13,7 @@
         "cataclysm.CursedTombstoneEntityMixin",
         "curios.CuriosEventHandlerMixin",
         "jdt.CreatureCatcherEntityMixin",
+        "jdt.UnstablePortalFluidTypeMixin",
         "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"
     ],
