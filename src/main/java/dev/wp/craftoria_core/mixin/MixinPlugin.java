@@ -25,21 +25,25 @@ public class MixinPlugin implements IMixinConfigPlugin {
         List<String> mods = Utils.getModList();
 
         boolean ae2AndEmi = mods.contains("ae2") && mods.contains("emi");
-        modStatus.put("ae2", ae2AndEmi);
-        modStatus.put("emi", ae2AndEmi);
+        modStatus.put("ae2emi", ae2AndEmi);
         modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
         modStatus.put("cataclysm", mods.contains("cataclysm"));
         modStatus.put("jdt", mods.contains("justdirethings"));
+        modStatus.put("curios", mods.contains("curios"));
 
-        setMixinToMod("ae2.KeySortersMixin", "ae2");
-        setMixinToMod("emi.ReloadWorkerMixin", "emi");
+        // Client
+        setMixinToMod("ae2.KeySortersMixin", "ae2emi");
+        setMixinToMod("emi.ReloadWorkerMixin", "ae2emi");
+        setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
+
+        // Common
         setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
-        setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
         setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
         setMixinToMod("jdt.CreatureCatcherEntityMixin", "jdt");
+        setMixinToMod("curios.CuriosEventHandlerMixin", "curios");
     }
 
     @Override

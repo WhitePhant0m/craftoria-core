@@ -6,11 +6,12 @@
     "minVersion": "0.8",
     "client": [
         "ae2.KeySortersMixin",
+        "emi.ReloadWorkerMixin",
         "xycraft.XyCoreClientMixin"
     ],
     "mixins": [
         "cataclysm.CursedTombstoneEntityMixin",
-        "emi.ReloadWorkerMixin",
+        "curios.CuriosEventHandlerMixin",
         "jdt.CreatureCatcherEntityMixin",
         "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"
