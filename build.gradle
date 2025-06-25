@@ -126,6 +126,10 @@ configurations {
 }
 
 dependencies {
+    // MixinSquared's annotationProcessor MUST be registered BEFORE Mixin's one.
+    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.3"))
+    implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.3"))
+
     compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
     compileOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
 
@@ -148,8 +152,8 @@ dependencies {
     compileOnly "curse.maven:xycraft-653786:5601037"
 
     compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
-    implementation "curse.maven:industrial-foregoing-266515:6626624"
-    implementation "curse.maven:titanium-287342:6443608"
+    compileOnly "curse.maven:industrial-foregoing-266515:6626624"
+    compileOnly "curse.maven:titanium-287342:6443608"
 
     compileOnly "curse.maven:lendercataclysm-551586:6501450"
     compileOnly "curse.maven:lionfish-api-1001614:6168249"
