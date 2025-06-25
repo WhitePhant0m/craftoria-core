@@ -7,6 +7,7 @@
     "client": [
         "ae2.KeySortersMixin",
         "emi.ReloadWorkerMixin",
+        "minecraft.CreativeModeInventoryScreenMixin",
         "xycraft.XyCoreClientMixin"
     ],
     "mixins": [
