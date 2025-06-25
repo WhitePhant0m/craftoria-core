@@ -12,7 +12,7 @@ public class ClientConfig {
     public static final ModConfigSpec SPEC;
 
     private static String key(String path) {
-        return Craftoria.ID + "." + path;
+        return Craftoria.ID + ".config." + path;
     }
 
     static {
@@ -20,6 +20,7 @@ public class ClientConfig {
         {
             BUILDER.translation(key("mixin_toggles")).push("Mixin Toggles");
             DISABLE_SEARCH_TAB_AUTOFOCUS = BUILDER
+                    .translation(key("disable_search_tab_autofocus"))
                     .comment("Disable the search tab auto-focus in the creative inventory screen.")
                     .define("disable_search_tab_autofocus", true);
             BUILDER.pop();

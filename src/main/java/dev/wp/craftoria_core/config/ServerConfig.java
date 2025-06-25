@@ -9,7 +9,7 @@ public class ServerConfig {
     public static final ModConfigSpec SPEC;
 
     private static String key(String path) {
-        return Craftoria.ID + "." + path;
+        return Craftoria.ID + ".config." + path;
     }
 
     static {
@@ -17,6 +17,7 @@ public class ServerConfig {
         {
             BUILDER.translation(key("mixin_toggles")).push("Mixin Toggles");
             SUPPRESS_UNKNOWN_PACKET_ID = BUILDER
+                    .translation(key("suppress_unknown_packet_id"))
                     .comment("Suppress the 'Unknown packet ID -1' error in the logs.")
                     .define("suppress_unknown_packet_id", false);
             BUILDER.pop();
