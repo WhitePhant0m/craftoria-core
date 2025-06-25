@@ -17,6 +17,7 @@
         "foregoing.MobCrusherTileMixin",
         "jdt.CreatureCatcherEntityMixin",
         "jdt.UnstablePortalFluidTypeMixin",
+        "minecraft.IdDispatchCodecMixin",
         "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"
     ],
