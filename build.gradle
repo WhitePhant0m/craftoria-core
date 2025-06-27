@@ -127,8 +127,8 @@ configurations {
 
 dependencies {
     // MixinSquared's annotationProcessor MUST be registered BEFORE Mixin's one.
-    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.3"))
-    implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.3"))
+//    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.3"))
+//    implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.3"))
 
     compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
     compileOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
