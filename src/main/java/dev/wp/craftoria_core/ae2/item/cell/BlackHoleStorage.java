@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import java.math.BigInteger;
 import java.util.Objects;
 
+// Taken from BiggerAE2(MIT), credits to the original author, DancingSnow0517.
 @Getter
 public class BlackHoleStorage {
     public static final Codec<BlackHoleStorage> CODEC =

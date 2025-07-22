@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 
 import java.math.BigInteger;
 
+// Taken from BiggerAE2(MIT), credits to the original author, DancingSnow0517.
 public class BlackHoleStorageCell implements StorageCell {
     private final ItemStack stack;
     private final ISaveProvider container;

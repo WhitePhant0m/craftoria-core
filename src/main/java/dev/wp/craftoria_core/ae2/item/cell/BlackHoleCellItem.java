@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+// Taken from BiggerAE2(MIT), credits to the original author, DancingSnow0517.
 @Getter
 public class BlackHoleCellItem extends AEBaseItem implements ICellWorkbenchItem {
     public static final Handler HANDLER = new Handler();

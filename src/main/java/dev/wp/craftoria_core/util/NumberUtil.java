@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
+// Taken from BiggerAE2(MIT), credits to the original author, DancingSnow0517.
 public class NumberUtil {
     private static final String[] UNITS = {"", "K", "M", "G", "T", "P", "E", "Y", "Z", "R", "Q"};
 
