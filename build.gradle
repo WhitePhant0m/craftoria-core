@@ -188,8 +188,7 @@ dependencies {
 
     runtimeOnly "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
 
-    implementation "curse.maven:simple-voice-chat-416089:6952604"
-    implementation "curse.maven:sound-physics-remastered-535489:6809432"
+    compileOnly "curse.maven:sound-physics-remastered-535489:6809432"
 
     // Just used to verify nbt ordering works with creative sort
     runtimeOnly "dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}"
