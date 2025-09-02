@@ -31,15 +31,15 @@ public class SoundPhysicsMixin {
      */
     @Overwrite
     public static void init() {
-        Loggers.log("Initializing Sound Physics", new Object[0]);
+        Loggers.log("Initializing Sound Physics");
 
         try {
             setupEFX();
-            Loggers.log("EFX ready", new Object[0]);
+            Loggers.log("EFX ready");
             craftoriaCore$enabled = true;
         } catch (Throwable var1) {
-            Loggers.error("Failed to setup EFX", new Object[]{var1});
-            Loggers.error("Disabling sound physics", new Object[0]);
+            Loggers.error("Failed to setup EFX", var1);
+            Loggers.error("Disabling sound physics");
             craftoriaCore$enabled = false;
         }
 
