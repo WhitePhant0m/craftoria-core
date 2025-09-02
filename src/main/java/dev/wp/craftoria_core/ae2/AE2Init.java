@@ -7,22 +7,18 @@ import dev.wp.craftoria_core.ae2.compat.ArsEngItems;
 import dev.wp.craftoria_core.ae2.init.AE2Components;
 import dev.wp.craftoria_core.ae2.init.AE2Items;
 import dev.wp.craftoria_core.ae2.item.cell.BlackHoleCellItem;
+import dev.wp.craftoria_core.util.Utils;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class AE2Init {
-    private static final boolean isAppFluxLoaded = ModList.get().isLoaded("appflux");
-    private static final boolean isAppMekLoaded = ModList.get().isLoaded("appmek");
-    private static final boolean isArsEngLoaded = ModList.get().isLoaded("arseng");
-
     public static void init(IEventBus bus) {
         AE2Items.init();
         AE2Components.init();
 
-        if (isAppFluxLoaded) AppFluxItems.init();
-        if (isAppMekLoaded) AppMekItems.init();
-        if (isArsEngLoaded) ArsEngItems.init();
+        if (Utils.isModLoaded("appflux")) AppFluxItems.init();
+        if (Utils.isModLoaded("appmek")) AppMekItems.init();
+        if (Utils.isModLoaded("arseng")) ArsEngItems.init();
 
         bus.addListener(AE2Init::initStorageCells);
     }

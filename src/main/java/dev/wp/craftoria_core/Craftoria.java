@@ -3,11 +3,11 @@ package dev.wp.craftoria_core;
 import dev.wp.craftoria_core.ae2.AE2Init;
 import dev.wp.craftoria_core.config.ClientConfig;
 import dev.wp.craftoria_core.config.ServerConfig;
+import dev.wp.craftoria_core.util.Utils;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.config.ModConfigEvent;
@@ -51,6 +51,6 @@ public class Craftoria {
         CComponents.init(bus);
         CCreativeTab.init(bus);
 
-        if (ModList.get().isLoaded("ae2")) AE2Init.init(bus);
+        if (Utils.isModLoaded("ae2")) AE2Init.init(bus);
     }
 }
