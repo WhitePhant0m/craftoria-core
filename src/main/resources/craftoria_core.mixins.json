@@ -8,7 +8,8 @@
         "ae2.KeySortersMixin",
         "emi.ReloadWorkerMixin",
         "minecraft.CreativeModeInventoryScreenMixin",
-        "xycraft.XyCoreClientMixin"
+        "xycraft.XyCoreClientMixin",
+        "sound_physics.SoundPhysicsMixin"
     ],
     "mixins": [
         "cataclysm.CursedTombstoneEntityMixin",

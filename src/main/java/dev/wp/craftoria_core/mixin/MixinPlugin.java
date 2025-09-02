@@ -33,11 +33,13 @@ public class MixinPlugin implements IMixinConfigPlugin {
         modStatus.put("cataclysm", mods.contains("cataclysm"));
         modStatus.put("jdt", mods.contains("justdirethings"));
         modStatus.put("curios", mods.contains("curios"));
+        modStatus.put("sound_physics", mods.contains("sound_physics_remastered"));
 
         // Client
         setMixinToMod("ae2.KeySortersMixin", "ae2emi");
         setMixinToMod("emi.ReloadWorkerMixin", "ae2emi");
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
+        setMixinToMod("sound_physics.SoundPhysicsMixin", "sound_physics");
 
         // Common
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
