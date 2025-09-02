@@ -28,7 +28,6 @@ public class MixinPlugin implements IMixinConfigPlugin {
         boolean jdtAndIF = mods.contains("justdirethings") && mods.contains("industrialforegoing");
         modStatus.put("ae2emi", ae2AndEmi);
         modStatus.put("jdtAndIF", jdtAndIF);
-        modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
         modStatus.put("cataclysm", mods.contains("cataclysm"));
@@ -41,7 +40,6 @@ public class MixinPlugin implements IMixinConfigPlugin {
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
 
         // Common
-        setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
         setMixinToMod("foregoing.EnchantmentExtractorTileMixin", "jdtAndIF");
