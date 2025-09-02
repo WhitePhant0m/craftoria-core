@@ -4,7 +4,6 @@ import appeng.api.stacks.AEKey;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import lombok.Getter;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import org.jetbrains.annotations.Nullable;
@@ -13,7 +12,6 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 // Taken from BiggerAE2(MIT), credits to the original author, DancingSnow0517.
-@Getter
 public class BlackHoleStorage {
     public static final Codec<BlackHoleStorage> CODEC =
             RecordCodecBuilder.create(instance -> instance
@@ -56,6 +54,15 @@ public class BlackHoleStorage {
             c = BigInteger.ZERO;
         }
         count = c;
+    }
+
+    @Nullable
+    public AEKey getStoredItem() {
+        return storedItem;
+    }
+
+    public BigInteger getCount() {
+        return count;
     }
 
     public void encode(RegistryFriendlyByteBuf buf) {

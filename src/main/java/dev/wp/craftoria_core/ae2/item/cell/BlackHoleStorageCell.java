@@ -9,7 +9,6 @@ import appeng.api.storage.cells.CellState;
 import appeng.api.storage.cells.ISaveProvider;
 import appeng.api.storage.cells.StorageCell;
 import dev.wp.craftoria_core.ae2.init.AE2Components;
-import lombok.Getter;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -22,13 +21,10 @@ public class BlackHoleStorageCell implements StorageCell {
 
     private final AEKeyType type;
 
-    @Getter
     private AEKey storedItem;
 
-    @Getter
     private final AEKey filterItem;
 
-    @Getter
     private BigInteger count;
 
     private boolean isPersisted = true;
@@ -45,6 +41,18 @@ public class BlackHoleStorageCell implements StorageCell {
         type = cell.getKeyType();
 
         count = storage != null ? storage.getCount() : BigInteger.ZERO;
+    }
+
+    public AEKey getStoredItem() {
+        return storedItem;
+    }
+
+    public AEKey getFilterItem() {
+        return filterItem;
+    }
+
+    public BigInteger getCount() {
+        return count;
     }
 
     @Override

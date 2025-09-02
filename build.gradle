@@ -143,9 +143,6 @@ dependencies {
 //    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.3"))
 //    implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.3"))
 
-    compileOnly "org.projectlombok:lombok:1.18.32"
-    annotationProcessor "org.projectlombok:lombok:1.18.32"
-
     compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
     compileOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
 
