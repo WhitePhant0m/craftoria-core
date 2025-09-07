@@ -143,9 +143,6 @@ dependencies {
 //    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.3"))
 //    implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.3"))
 
-    compileOnly "org.projectlombok:lombok:1.18.32"
-    annotationProcessor "org.projectlombok:lombok:1.18.32"
-
     compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
     compileOnly "maven.modrinth:my-nethers-delight:${mynethersdelight_version}"
 
@@ -190,6 +187,8 @@ dependencies {
     compileOnly "curse.maven:lionfish-api-1001614:6168249"
 
     runtimeOnly "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
+
+    compileOnly "curse.maven:sound-physics-remastered-535489:6809432"
 
     // Just used to verify nbt ordering works with creative sort
     runtimeOnly "dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}"

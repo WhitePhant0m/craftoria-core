@@ -19,7 +19,6 @@ import appeng.util.ConfigInventory;
 import appeng.util.InteractionUtil;
 import dev.wp.craftoria_core.Craftoria;
 import dev.wp.craftoria_core.util.NumberUtil;
-import lombok.Getter;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -40,7 +39,6 @@ import java.util.Optional;
 import java.util.Set;
 
 // Taken from BiggerAE2(MIT), credits to the original author, DancingSnow0517.
-@Getter
 public class BlackHoleCellItem extends AEBaseItem implements ICellWorkbenchItem {
     public static final Handler HANDLER = new Handler();
     private final AEKeyType keyType;
@@ -53,6 +51,18 @@ public class BlackHoleCellItem extends AEBaseItem implements ICellWorkbenchItem 
         this.keyType = keyType;
         this.coreItem = coreItem;
         this.housingItem = housingItem;
+    }
+
+    public AEKeyType getKeyType() {
+        return keyType;
+    }
+
+    public ItemLike getCoreItem() {
+        return coreItem;
+    }
+
+    public ItemLike getHousingItem() {
+        return housingItem;
     }
 
     @Override

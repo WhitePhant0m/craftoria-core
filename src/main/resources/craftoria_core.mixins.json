@@ -9,8 +9,8 @@
         "buildinggadgets2.BuildingGadgetsRenderDisable",
         "emi.ReloadWorkerMixin",
         "minecraft.CreativeModeInventoryScreenMixin",
-        "xycraft.EnergyTooltipHelperMixin",
-        "xycraft.XyCoreClientMixin"
+        "xycraft.XyCoreClientMixin",
+        "sound_physics.SoundPhysicsMixin"
     ],
     "mixins": [
         "cataclysm.CursedTombstoneEntityMixin",
@@ -20,7 +20,6 @@
         "jdt.CreatureCatcherEntityMixin",
         "jdt.UnstablePortalFluidTypeMixin",
         "minecraft.IdDispatchCodecMixin",
-        "mynethersdelight.CommonEventMixin",
         "cable_facades.ServerInGameEventsMixin"
     ],
     "injectors": {

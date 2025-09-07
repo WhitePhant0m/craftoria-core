@@ -28,24 +28,22 @@ public class MixinPlugin implements IMixinConfigPlugin {
         boolean jdtAndIF = mods.contains("justdirethings") && mods.contains("industrialforegoing");
         modStatus.put("ae2emi", ae2AndEmi);
         modStatus.put("jdtAndIF", jdtAndIF);
-        modStatus.put("mynethersdelight", mods.contains("mynethersdelight"));
         modStatus.put("cable_facades", mods.contains("cable_facades"));
         modStatus.put("xycraft_core", mods.contains("xycraft_core"));
-        modStatus.put("xycraft_machines", mods.contains("xycraft_machines"));
         modStatus.put("cataclysm", mods.contains("cataclysm"));
         modStatus.put("jdt", mods.contains("justdirethings"));
         modStatus.put("curios", mods.contains("curios"));
         modStatus.put("buildinggadgets2", mods.contains("buildinggadgets2"));
+        modStatus.put("sound_physics", mods.contains("sound_physics_remastered"));
 
         // Client
         setMixinToMod("ae2.KeySortersMixin", "ae2emi");
         setMixinToMod("emi.ReloadWorkerMixin", "ae2emi");
-        setMixinToMod("xycraft.EnergyTooltipHelperMixin", "xycraft_machines");
         setMixinToMod("xycraft.XyCoreClientMixin", "xycraft_core");
         setMixinToMod("buildinggadgets2.BuildingGadgetsRenderDisable", "buildinggadgets2");
+        setMixinToMod("sound_physics.SoundPhysicsMixin", "sound_physics");
 
         // Common
-        setMixinToMod("mynethersdelight.CommonEventMixin", "mynethersdelight");
         setMixinToMod("cable_facades.ServerInGameEventsMixin", "cable_facades");
         setMixinToMod("cataclysm.CursedTombstoneEntityMixin", "cataclysm");
         setMixinToMod("foregoing.EnchantmentExtractorTileMixin", "jdtAndIF");

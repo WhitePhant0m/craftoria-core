@@ -1,7 +1,9 @@
 package dev.wp.craftoria_core;
 
+import dev.wp.craftoria_core.ae2.AE2Init;
 import dev.wp.craftoria_core.config.ClientConfig;
 import dev.wp.craftoria_core.config.ServerConfig;
+import dev.wp.craftoria_core.util.Utils;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -27,7 +29,7 @@ public class Craftoria {
         container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
 
         bus.addListener(this::onConfigReload);
-        init(bus);
+//        init(bus);
 
         if (dist.isClient()) container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
@@ -49,6 +51,6 @@ public class Craftoria {
         CComponents.init(bus);
         CCreativeTab.init(bus);
 
-//        if (ModList.get().isLoaded("ae2")) AE2Init.init(bus);
+        if (Utils.isModLoaded("ae2")) AE2Init.init(bus);
     }
 }
