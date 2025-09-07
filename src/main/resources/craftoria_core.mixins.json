@@ -6,6 +6,7 @@
     "minVersion": "0.8",
     "client": [
         "ae2.KeySortersMixin",
+        "buildinggadgets2.BuildingGadgetsRenderDisable",
         "emi.ReloadWorkerMixin",
         "minecraft.CreativeModeInventoryScreenMixin",
         "xycraft.EnergyTooltipHelperMixin",
