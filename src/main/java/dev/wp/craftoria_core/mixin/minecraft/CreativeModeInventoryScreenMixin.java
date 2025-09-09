@@ -1,6 +1,5 @@
 package dev.wp.craftoria_core.mixin.minecraft;
 
-import dev.wp.craftoria_core.config.ClientConfig;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,9 +17,7 @@ public class CreativeModeInventoryScreenMixin {
     // Got tired of the search tab autofocusing
     @Inject(method = "selectTab", at = @At("TAIL"))
     private void selectTabNoAutoFocus(CreativeModeTab tab, CallbackInfo ci) {
-        if (ClientConfig.disableSearchTabAutofocus) {
-            searchBox.setCanLoseFocus(true);
-            searchBox.setFocused(false);
-        }
+        searchBox.setCanLoseFocus(true);
+        searchBox.setFocused(false);
     }
 }
