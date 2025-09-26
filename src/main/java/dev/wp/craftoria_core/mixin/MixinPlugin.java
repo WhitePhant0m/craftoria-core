@@ -35,6 +35,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
         modStatus.put("curios", mods.contains("curios"));
         modStatus.put("buildinggadgets2", mods.contains("buildinggadgets2"));
         modStatus.put("sound_physics", mods.contains("sound_physics_remastered"));
+        modStatus.put("relics", mods.contains("relics"));
 
         // Client
         setMixinToMod("ae2.KeySortersMixin", "ae2emi");
@@ -51,6 +52,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
         setMixinToMod("jdt.CreatureCatcherEntityMixin", "jdt");
         setMixinToMod("jdt.UnstablePortalFluidTypeMixin", "jdt");
         setMixinToMod("curios.CuriosEventHandlerMixin", "curios");
+        setMixinToMod("relics.RollerSkatesItemMixin", "relics");
     }
 
     @Override

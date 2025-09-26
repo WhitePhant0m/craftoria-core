@@ -20,7 +20,8 @@
         "jdt.CreatureCatcherEntityMixin",
         "jdt.UnstablePortalFluidTypeMixin",
         "minecraft.IdDispatchCodecMixin",
-        "cable_facades.ServerInGameEventsMixin"
+        "cable_facades.ServerInGameEventsMixin",
+        "relics.RollerSkatesItemMixin"
     ],
     "injectors": {
         "defaultRequire": 1
