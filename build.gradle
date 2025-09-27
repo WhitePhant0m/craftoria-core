@@ -210,6 +210,11 @@ dependencies {
 
     implementation "it.hurts.octostudios.octolib:octolib-neoforge:0.6.0.4+1.21"
     implementation "curse.maven:relics-mod-445274:6879532"
+    implementation "curse.maven:reliquified-ars-nouveau-1196449:6882233"
+
+    implementation ("com.alexthw.sauce:sauce-${minecraft_version}:${sauce_version}")
+    implementation ("com.alexthw.ars_elemental:ars_elemental-${minecraft_version}:${ars_elemental_version}")
+
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

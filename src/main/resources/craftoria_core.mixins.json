@@ -21,7 +21,8 @@
         "jdt.UnstablePortalFluidTypeMixin",
         "minecraft.IdDispatchCodecMixin",
         "cable_facades.ServerInGameEventsMixin",
-        "relics.RollerSkatesItemMixin"
+        "relics.RollerSkatesItemMixin",
+        "sauce.AttributeEventHandlerMixin"
     ],
     "injectors": {
         "defaultRequire": 1
